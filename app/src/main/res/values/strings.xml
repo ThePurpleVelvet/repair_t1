@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">repair</string>
+    <string name="login">LOGIN</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    
+    <string-array name="payment">
+        <item>Car Mechanic</item>
+        <item>Motorcycle Mechanic</item>
+    </string-array>
+
+    <string-array name="description">
+        <item>Car Mechanic confirm payment</item>
+        <item>Motorcycle Mechanic confirm payment</item>
+    </string-array>
+
+</resources>
