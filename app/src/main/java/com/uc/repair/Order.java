@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class Order extends AppCompatActivity {
 
-    Button buttonHome, buttonPrev, buttonNext;
+    Button buttonHome, buttonPayment, buttonPrev, buttonNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class Order extends AppCompatActivity {
         buttonHome = findViewById(R.id.buttonHome);
         buttonPrev = findViewById(R.id.buttonPrev);
         buttonNext = findViewById(R.id.buttonNext);
+        buttonPayment = findViewById(R.id.buttonPayment);
 
         Intent intent = getIntent();
 
@@ -33,6 +34,13 @@ public class Order extends AppCompatActivity {
             }
         });
 
+        buttonPayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Order.this, Payment2.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
