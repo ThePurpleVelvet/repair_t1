@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class Account extends AppCompatActivity {
-    Button buttonHomeProfile, buttonOrderProfile, buttonpayment, buttonlogout ;
+    Button buttonHomeProfile, buttonOrderProfile, buttonpayment, buttonlogout, buttonedit ;
     TextView textnamaaccount, textemailaccount, textphoneprofile;
 
     @Override
@@ -22,6 +22,7 @@ public class Account extends AppCompatActivity {
         buttonOrderProfile = findViewById(R.id.buttonOrderProfile);
         buttonpayment = findViewById(R.id.buttonPaymentProfike);
         buttonlogout = findViewById(R.id.buttonlogout);
+        buttonedit = findViewById(R.id.buttonEdit);
 
         textnamaaccount = findViewById(R.id.textUsernameprofile);
         textemailaccount = findViewById(R.id.textEmailprofile);
@@ -35,7 +36,7 @@ public class Account extends AppCompatActivity {
         final String phone = intent.getStringExtra("phone");
 
         //textnamaaccount.setText(getIntent().getStringExtra("username" ));
-        textnamaaccount.setText(String.valueOf(username));
+        textnamaaccount.setText(String.valueOf(name));
         textemailaccount.setText(String.valueOf(email));
         textphoneprofile.setText(String.valueOf(phone));
 
@@ -83,6 +84,19 @@ public class Account extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Account.this, Login.class);
+                intent.putExtra("username", username);
+                intent.putExtra("name", name);
+                intent.putExtra("password", password);
+                intent.putExtra("email", email);
+                intent.putExtra("phone", phone);
+                startActivity(intent);
+            }
+        });
+
+        buttonedit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Account.this, Accountedit.class);
                 intent.putExtra("username", username);
                 intent.putExtra("name", name);
                 intent.putExtra("password", password);
