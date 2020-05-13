@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("username", username);
                 intent.putExtra("name", name);
                 intent.putExtra("password", password);
+                intent.putExtra("email", email);
+                intent.putExtra("phone", phone);
                 startActivity(intent);
             }
         });

@@ -30,7 +30,8 @@ public class Login extends AppCompatActivity {
         final String sentName = intent.getStringExtra("name");
         final String sentUsername = intent.getStringExtra("username");
         final String sentPassword = intent.getStringExtra("password");
-
+        final String sentPhone = intent.getStringExtra("phone");
+        final String sentemail = intent.getStringExtra("email");
 
 
 
@@ -44,6 +45,11 @@ public class Login extends AppCompatActivity {
                 if (username.equals(sentUsername)  && password.equals(sentPassword)){
                     Toast.makeText(getApplicationContext(),"You are logged in " + sentName + " !",Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(Login.this, Home.class);
+                    intent.putExtra("email", sentemail);
+                    intent.putExtra("name", sentName);
+                    intent.putExtra("username", sentUsername);
+                    intent.putExtra("password", sentPassword);
+                    intent.putExtra("phone", sentPhone);
                     startActivity(intent);
                 }else
                 {
